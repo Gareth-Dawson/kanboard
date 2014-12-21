@@ -87,7 +87,7 @@ $server->register('updateProject', function($id, $name, $is_active = null, $is_p
 /**
  * Board procedures
  */
-$server->bind('getBoard', $boardModel, 'get');
+$server->bind('getBoard', $boardModel, 'getBoard');
 $server->bind('getColumns', $boardModel, 'getColumns');
 $server->bind('getColumn', $boardModel, 'getColumn');
 $server->bind('moveColumnUp', $boardModel, 'moveUp');

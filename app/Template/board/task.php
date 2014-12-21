@@ -1,3 +1,11 @@
+<div class="task-board draggable-item task-<?= $task['color_id'] ?> <?= $task['date_modification'] > time() - $board_highlight_period ? 'task-board-recent' : '' ?>"
+     data-task-id="<?= $task['id'] ?>"
+     data-owner-id="<?= $task['owner_id'] ?>"
+     data-category-id="<?= $task['category_id'] ?>"
+     data-due-date="<?= $task['date_due'] ?>"
+     data-task-url="<?= Helper\u('task', 'show', array('task_id' => $task['id'])) ?>"
+     title="<?= t('View this task') ?>">
+
 <?php if (isset($not_editable)): ?>
 
     <?= Helper\a('#'.$task['id'], 'task', 'readonly', array('task_id' => $task['id'], 'token' => $project['token'])) ?>
@@ -114,3 +122,5 @@
     </div>
 </div>
 <?php endif ?>
+
+</div>
